@@ -1,28 +1,103 @@
-<svg viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 193 54">
+  <!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  -->
   <defs>
-    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    <style>
+      .st0 {
+        font-family: SegoeUI-Bold, 'Segoe UI';
+        font-size: 22px;
+        font-weight: 700;
+      }
+
+      .st0, .st1, .st2, .st3, .st4, .st5, .st6 {
+        isolation: isolate;
+      }
+
+      .st7 {
+        fill: url(#linear-gradient);
+      }
+
+      .st8 {
+        fill: #fff;
+      }
+
+      .st1 {
+        stroke: url(#linear-gradient6);
+      }
+
+      .st1, .st2, .st3 {
+        fill: none;
+        opacity: .7;
+        stroke-width: 1.5px;
+      }
+
+      .st2 {
+        stroke: url(#linear-gradient4);
+      }
+
+      .st3 {
+        stroke: url(#linear-gradient5);
+      }
+
+      .st4 {
+        fill: url(#linear-gradient1);
+      }
+
+      .st4, .st5 {
+        opacity: .8;
+      }
+
+      .st5 {
+        fill: url(#linear-gradient2);
+      }
+
+      .st6 {
+        fill: url(#linear-gradient3);
+        opacity: .6;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-356.3" y1="317.6" x2="-355.3" y2="316.6" gradientTransform="translate(5717 5098) scale(16 -16)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset=".5" stop-color="#1d4ed8"/>
+      <stop offset="1" stop-color="#059669"/>
     </linearGradient>
-    
-    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#1d4ed8;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    <linearGradient id="linear-gradient1" x1="-342.7" y1="307.7" x2="-341.7" y2="306.7" gradientTransform="translate(3461 3087) scale(10 -10)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset=".5" stop-color="#1d4ed8"/>
+      <stop offset="1" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient2" x1="-342.7" y1="307.7" x2="-341.7" y2="306.7" gradientTransform="translate(3461 3107) scale(10 -10)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset=".5" stop-color="#1d4ed8"/>
+      <stop offset="1" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient3" x1="-333.6" y1="301.2" x2="-332.6" y2="300.2" gradientTransform="translate(2679 2445) scale(8 -8)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset=".5" stop-color="#1d4ed8"/>
+      <stop offset="1" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient4" x1="-354.8" y1="307.2" x2="-353.8" y2="307.2" gradientTransform="translate(5346 3092) scale(15 -10)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient5" x1="-354.8" y1="307.2" x2="-353.8" y2="307.2" gradientTransform="translate(5346 3102) scale(15 -10)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient6" x1="-342.7" y1="316" x2="-341.7" y2="316" gradientTransform="translate(3441 4772) scale(10 -15)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#059669"/>
     </linearGradient>
   </defs>
-
-  <!-- Network Icon -->
-  <g transform="translate(20, 20)">
-    <circle cx="20" cy="20" r="8" fill="url(#iconGradient)"/>
-    <circle cx="35" cy="10" r="5" fill="url(#iconGradient)" opacity="0.8"/>
-    <circle cx="35" cy="30" r="5" fill="url(#iconGradient)" opacity="0.8"/>
-    <circle cx="10" cy="35" r="4" fill="url(#iconGradient)" opacity="0.6"/>
-    <line x1="20" y1="20" x2="35" y2="10" stroke="url(#primaryGradient)" stroke-width="1.5" opacity="0.7"/>
-    <line x1="20" y1="20" x2="35" y2="30" stroke="url(#primaryGradient)" stroke-width="1.5" opacity="0.7"/>
-    <line x1="20" y1="20" x2="10" y2="35" stroke="url(#primaryGradient)" stroke-width="1.5" opacity="0.7"/>
-    <circle cx="20" cy="20" r="2" fill="white"/>
+  <g>
+    <circle class="st7" cx="24" cy="24.8" r="8"/>
+    <circle class="st4" cx="39" cy="14.8" r="5"/>
+    <circle class="st5" cx="39" cy="34.8" r="5"/>
+    <circle class="st6" cx="14" cy="39.8" r="4"/>
+    <line class="st2" x1="24" y1="24.8" x2="39" y2="14.8"/>
+    <line class="st3" x1="24" y1="24.8" x2="39" y2="34.8"/>
+    <line class="st1" x1="24" y1="24.8" x2="14" y2="39.8"/>
+    <circle class="st8" cx="24" cy="24.8" r="2"/>
   </g>
-  
-  <text x="70" y="50" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="url(#primaryGradient)">Digital Allies</text>
+  <text class="st0" transform="translate(54 34.8)"><tspan x="0" y="0">Digital Allies</tspan></text>
 </svg>
