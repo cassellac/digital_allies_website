@@ -12,6 +12,13 @@
   <style>
     /* ===== DESIGN TOKENS ===== */
     :root {
+
+    /* ===== BRAND LOGO ===== */
+    .brand-logo {
+      display: block;
+      block-size: 40px;
+      inline-size: auto;
+    }
       /* Colors */
       --color-primary: #2563EB;
       --color-primary-light: #DBEAFE;
@@ -580,7 +587,7 @@
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
     <div class="nav-container">
       <a class="brand" href="#home" aria-label="Digital Allies Home">
-        <img src="/assets/logo_horizontal_primary.svg" alt="Digital Allies logo" style="height:40px; width:auto; display:block;" />
+        <img src="/assets/logo_horizontal_primary.svg" alt="Digital Allies logo" class="brand-logo" />
         <span class="sr-only">Digital Allies</span>
       </a>
       <ul class="nav-menu">
