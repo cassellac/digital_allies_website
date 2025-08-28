@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Allies - Visual Brand Mockups</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --color-primary: #2563EB;
@@ -12,9 +15,9 @@
             --color-secondary: #059669;
             --color-secondary-light: #D1FAE5;
             --color-accent-1: #E7FEB8;
-            --color-accent-2: rgba(250,222,235,.65);
+            --color-accent-2: rgba(250, 222, 235, .65);
             --color-accent-3: #CED8E2;
-            --color-accent-4: rgba(214,226,255,.65);
+            --color-accent-4: rgba(214, 226, 255, .65);
             --color-neutral-light: #F0ECF3;
             --color-neutral: #828489;
             --color-neutral-dark: #414243;
@@ -22,13 +25,17 @@
             --color-text-light: #6b7280;
             --color-white: #ffffff;
             --color-bg: #f9fafb;
-            
+
             --font-display: 'Instrument Serif', serif;
             --font-body: 'Inter', sans-serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: var(--font-body);
             line-height: 1.6;
@@ -47,7 +54,7 @@
             padding: 2rem;
             background: white;
             border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .section h2 {
@@ -63,8 +70,13 @@
             gap: 2rem;
         }
 
-        .grid-2 { grid-template-columns: 1fr 1fr; }
-        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-2 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
 
         /* Logo Showcase */
         .logo-showcase {
@@ -96,8 +108,17 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.1); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.7;
+                transform: scale(1.1);
+            }
         }
 
         .logo-variations {
@@ -126,7 +147,7 @@
             text-align: center;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .color-sample {
@@ -136,7 +157,7 @@
             justify-content: center;
             color: white;
             font-weight: 600;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .color-info {
@@ -177,11 +198,38 @@
             margin-bottom: 0.5rem;
         }
 
-        .h1-demo { font-family: var(--font-display); font-size: 3rem; font-weight: 700; line-height: 1.1; }
-        .h2-demo { font-family: var(--font-display); font-size: 2.25rem; font-weight: 700; line-height: 1.2; }
-        .h3-demo { font-family: var(--font-body); font-size: 1.5rem; font-weight: 600; line-height: 1.3; }
-        .body-demo { font-family: var(--font-body); font-size: 1rem; line-height: 1.6; }
-        .small-demo { font-family: var(--font-body); font-size: 0.875rem; line-height: 1.5; }
+        .h1-demo {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .h2-demo {
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .h3-demo {
+            font-family: var(--font-body);
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .body-demo {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .small-demo {
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
 
         /* Component Showcase */
         .component-demo {
@@ -225,7 +273,7 @@
             background: white;
             padding: 2rem;
             border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border: 1px solid var(--color-primary-light);
         }
 
@@ -248,7 +296,7 @@
             right: -50%;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
         }
 
         .business-card .logo {
@@ -297,8 +345,13 @@
             background: #ff5f56;
         }
 
-        .browser-dot:nth-child(2) { background: #ffbd2e; }
-        .browser-dot:nth-child(3) { background: #27ca3f; }
+        .browser-dot:nth-child(2) {
+            background: #ffbd2e;
+        }
+
+        .browser-dot:nth-child(3) {
+            background: #27ca3f;
+        }
 
         .website-content {
             background: white;
@@ -369,14 +422,16 @@
         }
 
         @media (max-width: 768px) {
-            .grid-2, .grid-3 {
+
+            .grid-2,
+            .grid-3 {
                 grid-template-columns: 1fr;
             }
-            
+
             .logo-primary {
                 font-size: 2rem;
             }
-            
+
             .business-card {
                 width: 100%;
                 max-width: 350px;
@@ -434,6 +489,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header style="text-align: center; margin-bottom: 3rem;">
@@ -468,7 +524,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="usage-guide">
                 <h4>Logo Usage Guidelines</h4>
                 <ul>
@@ -493,7 +549,7 @@
                         <small>Primary actions, links, focus states</small>
                     </div>
                 </div>
-                
+
                 <div class="color-swatch">
                     <div class="color-sample" style="background: #DBEAFE; color: var(--color-text);">Light Blue</div>
                     <div class="color-info">
@@ -502,7 +558,7 @@
                         <small>Backgrounds, subtle accents</small>
                     </div>
                 </div>
-                
+
                 <div class="color-swatch">
                     <div class="color-sample" style="background: #059669;">Secondary</div>
                     <div class="color-info">
@@ -511,7 +567,7 @@
                         <small>Success states, CTAs</small>
                     </div>
                 </div>
-                
+
                 <div class="color-swatch">
                     <div class="color-sample" style="background: #D1FAE5; color: var(--color-text);">Light Green</div>
                     <div class="color-info">
@@ -520,7 +576,7 @@
                         <small>Success backgrounds, highlights</small>
                     </div>
                 </div>
-                
+
                 <div class="color-swatch">
                     <div class="color-sample" style="background: #414243;">Dark</div>
                     <div class="color-info">
@@ -529,7 +585,7 @@
                         <small>Headings, important text</small>
                     </div>
                 </div>
-                
+
                 <div class="color-swatch">
                     <div class="color-sample" style="background: #828489;">Medium</div>
                     <div class="color-info">
@@ -539,7 +595,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="usage-guide">
                 <h4>Color Usage Guidelines</h4>
                 <ul>
@@ -561,25 +617,26 @@
                     <div class="h1-demo">Main Headlines & Hero Text</div>
                     <small>Instrument Serif, 48px, Bold</small>
                 </div>
-                
+
                 <div class="type-example">
                     <div class="type-label">H2 Section</div>
                     <div class="h2-demo">Section Headers & Titles</div>
                     <small>Instrument Serif, 36px, Bold</small>
                 </div>
-                
+
                 <div class="type-example">
                     <div class="type-label">H3 Subsection</div>
                     <div class="h3-demo">Card Titles & Subsections</div>
                     <small>Inter, 24px, SemiBold</small>
                 </div>
-                
+
                 <div class="type-example">
                     <div class="type-label">Body Text</div>
-                    <div class="body-demo">This is body text used for paragraphs, descriptions, and general content. It provides excellent readability across all devices and supports multiple languages.</div>
+                    <div class="body-demo">This is body text used for paragraphs, descriptions, and general content. It
+                        provides excellent readability across all devices and supports multiple languages.</div>
                     <small>Inter, 16px, Regular</small>
                 </div>
-                
+
                 <div class="type-example">
                     <div class="type-label">Small Text</div>
                     <div class="small-demo">Captions, fine print, and secondary information</div>
@@ -591,24 +648,26 @@
         <!-- Component System -->
         <section class="section">
             <h2>UI Components</h2>
-            
+
             <div class="component-demo">
                 <h4>Buttons</h4>
                 <button class="button button-primary">Primary Action</button>
                 <button class="button button-secondary">Secondary Action</button>
                 <button class="button button-ghost">Ghost Button</button>
             </div>
-            
+
             <div class="component-demo">
                 <h4>Cards</h4>
                 <div class="grid grid-2">
                     <div class="card-demo">
                         <h3>Service Card</h3>
-                        <p>Clean card design with consistent spacing and subtle shadows. Perfect for services, features, or content blocks.</p>
+                        <p>Clean card design with consistent spacing and subtle shadows. Perfect for services, features,
+                            or content blocks.</p>
                     </div>
                     <div class="card-demo">
                         <h3>Feature Highlight</h3>
-                        <p>Accessible design with proper contrast ratios and focus indicators for all interactive elements.</p>
+                        <p>Accessible design with proper contrast ratios and focus indicators for all interactive
+                            elements.</p>
                     </div>
                 </div>
             </div>
@@ -643,7 +702,7 @@
                     <div>Partnership</div>
                 </div>
             </div>
-            
+
             <div class="usage-guide">
                 <h4>Icon Guidelines</h4>
                 <ul>
@@ -666,10 +725,10 @@
                         Digital Allies
                     </div>
                     <div class="contact-info">
-                        <div><strong>Sarah Martinez</strong></div>
-                        <div>Senior Developer</div>
-                        <div>hello@digitalallies.com</div>
-                        <div>(555) 123-ALLY</div>
+                        <div><strong>Jenny Figueroa</strong></div>
+                        <div>Community Relations</div>
+                        <div>jfig@digitalallies.net</div>
+                        <div>928-228-5769</div>
                     </div>
                 </div>
             </div>
@@ -683,11 +742,12 @@
                     <div class="browser-dot"></div>
                     <div class="browser-dot"></div>
                     <div class="browser-dot"></div>
-                    <span style="margin-left: 1rem; font-size: 0.875rem; color: #666;">digitalallies.com</span>
+                    <span style="margin-left: 1rem; font-size: 0.875rem; color: #666;">digitalallies.net</span>
                 </div>
                 <div class="website-content">
                     <h1>Get Online, Stay Online, <em>With Ease</em></h1>
-                    <p>Bilingual web development and tech consulting for small businesses, schools, and individuals. We help you thrive online with ADA-compliant websites that actually work for your community.</p>
+                    <p>Bilingual web development and tech consulting for small businesses, schools, and individuals. We
+                        help you thrive online with ADA-compliant websites that actually work for your community.</p>
                     <div>
                         <button class="button button-primary">Start Your Project</button>
                         <button class="button button-ghost">Our Services</button>
@@ -710,7 +770,9 @@
                     </div>
                     <div class="post-content">
                         <div class="post-image">Website Accessibility Demo</div>
-                        <p>🎯 <strong>Tuesday Tech Tip:</strong> Alt text isn't just nice to have—it's essential. Here's how to write descriptive alt text that helps everyone understand your images. #Accessibility #WebDevelopment #DigitalAllies</p>
+                        <p>🎯 <strong>Tuesday Tech Tip:</strong> Alt text isn't just nice to have—it's essential. Here's
+                            how to write descriptive alt text that helps everyone understand your images. #Accessibility
+                            #WebDevelopment #DigitalAllies</p>
                     </div>
                 </div>
             </div>
@@ -731,7 +793,7 @@
                     </ul>
                     <p><strong>Example:</strong> "Let's get your business online" vs. "We provide digital solutions"</p>
                 </div>
-                
+
                 <div class="usage-guide">
                     <h4>Spanish Voice (Voz en Español)</h4>
                     <ul>
@@ -741,14 +803,16 @@
                         <li>Clear and accessible</li>
                         <li>Community-oriented</li>
                     </ul>
-                    <p><strong>Ejemplo:</strong> "Estamos aquí para ayudarte" approach with appropriate formality levels</p>
+                    <p><strong>Ejemplo:</strong> "Estamos aquí para ayudarte" approach with appropriate formality levels
+                    </p>
                 </div>
             </div>
         </section>
 
         <footer style="text-align: center; margin-top: 4rem; padding: 2rem; color: var(--color-text-light);">
-            <p>&copy; 2024 Digital Allies Brand System. For internal use and authorized partners only.</p>
+            <p>&copy; 2025 Digital Allies Brand System. For internal use and authorized partners only.</p>
         </footer>
     </div>
 </body>
+
 </html>
