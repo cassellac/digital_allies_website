@@ -1,0 +1,186 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# 1) Folders
+mkdir -p assets chatbot content/help functions tools legal
+
+# 2) Control files
+cat > README.md <<'MD'
+# Digital Allies Website
+Version: 1.0 — 2025-08-27
+Bilingual, ADA-compliant website for Digital Allies.
+MD
+
+cat > LICENSE <<'LIC'
+MIT License
+
+Copyright (c) 2025 Digital Allies
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+LIC
+
+cat > .gitignore <<'GI'
+node_modules/
+dist/
+.DS_Store
+.env
+GI
+
+cat > VERSION.json <<'JSON'
+{
+  "plan": "1.4",
+  "website": "1.0",
+  "mockups": "1.0",
+  "index": "1.0",
+  "business_plan_pdf": "1.0",
+  "marketing_strategy_pdf": "1.0",
+  "cms_guide_pdf": "1.0",
+  "brand_guidelines_pdf": "1.0",
+  "date": "2025-08-27"
+}
+JSON
+
+# 3) Chatbot
+cat > chatbot/widget.css <<'CSS'
+:root{--da-z:9999;--da-bg:#fff;--da-text:#1f2937;--da-muted:#6b7280;--da-primary:#2563EB;--da-secondary:#059669;--da-shadow:0 10px 30px rgba(0,0,0,.15);--da-radius:16px}
+.da-chat-button{position:fixed;right:20px;bottom:20px;z-index:var(--da-z);background:var(--da-primary);color:#fff;border:0;border-radius:999px;padding:12px 16px;font:600 14px "Segoe UI", Ubuntu, system-ui, -apple-system, Arial, sans-serif;box-shadow:var(--da-shadow);cursor:pointer}
+.da-chat-button:focus{outline:3px solid #93c5fd;outline-offset:2px}
+.da-chat-panel[hidden]{display:none!important}
+.da-chat-panel{position:fixed;right:20px;bottom:76px;z-index:var(--da-z);width:min(360px,90vw);max-height:min(70vh,700px);background:var(--da-bg);color:var(--da-text);border-radius:var(--da-radius);box-shadow:var(--da-shadow);display:flex;flex-direction:column;overflow:hidden}
+.da-chat-header{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid #e5e7eb;font:600 14px Ubuntu, "Segoe UI", system-ui, -apple-system, Arial, sans-serif}
+.da-chat-body{padding:12px;overflow:auto;font:14px "Segoe UI", Ubuntu, system-ui, -apple-system, Arial, sans-serif}
+.da-msg{margin:8px 0;line-height:1.5}
+.da-msg.q{font-weight:600}
+.da-msg.a{color:var(--da-text)}
+.da-search{display:flex;gap:8px;padding:12px;border-top:1px solid #e5e7eb}
+.da-search input{flex:1;min-height:44px;padding:0 12px;border-radius:10px;border:2px solid #e5e7eb;font:14px "Segoe UI", Ubuntu, system-ui, -apple-system, Arial, sans-serif}
+.da-search input:focus{border-color:var(--da-primary);outline:none;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.da-search button{min-height:44px;padding:0 14px;border-radius:10px;border:0;background:var(--da-secondary);color:#fff;font-weight:600}
+.da-search button:focus{outline:3px solid #a7f3d0;outline-offset:2px}
+.da-chat-panel[role="dialog"]{outline:none}
+CSS
+
+cat > chatbot/widget.js <<'JS'
+(function(){const s={open:!1,lang:document.documentElement.lang?.startsWith('es')?'es':'en',faqs:[]};const b=document.createElement('button');b.className='da-chat-button';b.type='button';b.setAttribute('aria-haspopup','dialog');b.setAttribute('aria-expanded','false');b.textContent=s.lang==='es'?'Chat de ayuda':'Help Chat';const p=document.createElement('div');p.className='da-chat-panel';p.setAttribute('role','dialog');p.setAttribute('aria-modal','true');p.setAttribute('hidden','');p.innerHTML=`<div class="da-chat-header"><span>${s.lang==='es'?'Asistente de Digital Allies':'Digital Allies Assistant'}</span><div><button type="button" data-lang="en" aria-label="English">EN</button><button type="button" data-lang="es" aria-label="Español">ES</button><button type="button" data-close aria-label="${s.lang==='es'?'Cerrar':'Close'}">✕</button></div></div><div class="da-chat-body" id="da-body"></div><form class="da-search" id="da-form"><input id="da-q" type="search" placeholder="${s.lang==='es'?'Busca una pregunta…':'Search a question…'}" aria-label="${s.lang==='es'?'Buscar':'Search'}"/><button>${s.lang==='es'?'Buscar':'Search'}</button></form>`;document.addEventListener('DOMContentLoaded',()=>{document.body.appendChild(b);document.body.appendChild(p);l(s.lang);b.addEventListener('click',t);p.querySelector('[data-close]').addEventListener('click',t);p.addEventListener('keydown',e=>{if(e.key==='Escape')t(!1)});p.querySelectorAll('button[data-lang]').forEach(d=>d.addEventListener('click',()=>L(d.dataset.lang)));p.querySelector('#da-form').addEventListener('submit',y)});function t(f){s.open=f!=null?f:!s.open;p.toggleAttribute('hidden',!s.open);b.setAttribute('aria-expanded',String(s.open));if(s.open){p.querySelector('#da-q').focus()}else{b.focus()}}async function l(f){s.lang=f;const r=await fetch(`chatbot/faq.${f}.json`,{cache:'no-store'});s.faqs=(await r.json()).faqs||[];o(s.faqs.slice(0,6));b.textContent=f==='es'?'Chat de ayuda':'Help Chat';p.querySelector('#da-q').setAttribute('placeholder',f==='es'?'Busca una pregunta…':'Search a question…')}function o(f){const r=p.querySelector('#da-body');r.innerHTML='';if(!f.length){r.innerHTML=`<p class="da-msg">${s.lang==='es'?'Sin resultados. Intenta con otras palabras.':'No results. Try different keywords.'}</p>`;return}f.forEach(({q,a})=>{const e=document.createElement('div');e.className='da-msg q';e.textContent=q;r.appendChild(e);const n=document.createElement('div');n.className='da-msg a';n.textContent=a;r.appendChild(n)});const e=document.createElement('div');e.className='da-msg';e.innerHTML=s.lang==='es'?'¿Aún tienes dudas? Escríbenos a <a href="mailto:contact@digitalallies.net">contact@digitalallies.net</a> o llama al <a href="tel:+19282285769">928-228-5769</a>.':'Still need help? Email <a href="mailto:contact@digitalallies.net">contact@digitalallies.net</a> or call <a href="tel:+19282285769">928-228-5769</a>.';r.appendChild(e)}function y(e){e.preventDefault();const n=p.querySelector('#da-q').value.trim().toLowerCase();if(!n)return o(s.faqs.slice(0,6));const f=s.faqs.filter(x=>(x.q+' '+x.a).toLowerCase().includes(n));o(f)}function L(f){l(f)}})();
+JS
+
+cat > chatbot/faq.en.json <<'EN'
+{
+  "meta": { "lang": "en", "version": 1 },
+  "faqs": [
+    { "q": "What services do you offer?", "a": "Websites, ADA compliance, bilingual content, training, digital marketing, and maintenance." },
+    { "q": "Do you work in Spanish?", "a": "Yes. We provide true bilingual service (English/Spanish) across design, content, and support." },
+    { "q": "How much does a website cost?", "a": "Starter from $2,500; Business Pro from $4,500; Enterprise is custom. We also offer maintenance plans." },
+    { "q": "How do I get started?", "a": "Click ‘Start Your Project’ or use the Contact form. We’ll schedule a short call." },
+    { "q": "How can I contact you?", "a": "Email contact@digitalallies.net or call 928-228-5769. We’re in Kingman, AZ." },
+    { "q": "Do you support accessibility (ADA)?", "a": "Yes—WCAG-focused builds with keyboard navigation, color contrast, labels, skip links, and reduced motion." },
+    { "q": "Do you host websites?", "a": "We deploy on Cloudflare Pages and can manage DNS on Cloudflare. We offer ongoing support and maintenance." },
+    { "q": "Can I book a call?", "a": "Yes! Visit https://digitalallies.net/booking or email contact@digitalallies.net to schedule a consultation." }
+  ]
+}
+EN
+
+cat > chatbot/faq.es.json <<'ES'
+{
+  "meta": { "lang": "es", "version": 1 },
+  "faqs": [
+    { "q": "¿Qué servicios ofrecen?", "a": "Sitios web, cumplimiento ADA, contenido bilingüe, capacitación, marketing digital y mantenimiento." },
+    { "q": "¿Trabajan en español?", "a": "Sí. Ofrecemos un servicio verdaderamente bilingüe (inglés/español) en diseño, contenido y soporte." },
+    { "q": "¿Cuánto cuesta un sitio web?", "a": "Paquete Inicial desde $2,500; Business Pro desde $4,500; Enterprise es personalizado. También tenemos planes de mantenimiento." },
+    { "q": "¿Cómo empiezo?", "a": "Haz clic en ‘Comienza tu proyecto’ o usa el formulario de Contacto. Agendaremos una llamada breve." },
+    { "q": "¿Cómo puedo comunicarme?", "a": "Escribe a contact@digitalallies.net o llama al 928-228-5769. Estamos en Kingman, AZ." },
+    { "q": "¿Cumplen con accesibilidad (ADA)?", "a": "Sí—construimos con WCAG: navegación por teclado, contraste, etiquetas, enlaces para saltar y movimiento reducido." },
+    { "q": "¿Ofrecen hosting?", "a": "Publicamos en Cloudflare Pages y gestionamos DNS en Cloudflare. Ofrecemos soporte y mantenimiento continuo." },
+    { "q": "¿Puedo agendar una llamada?", "a": "¡Sí! Visita https://digitalallies.net/booking o escribe a contact@digitalallies.net para programar una consulta." }
+  ]
+}
+ES
+
+# 4) Help Center
+cat > content/help/README.md <<'HCR'
+# Help Center (Stub)
+Add bilingual help articles here.
+- `*.en.mdx` for English
+- `*.es.mdx` for Spanish
+HCR
+
+cat > content/help/getting-started.en.mdx <<'HCE'
+---
+title: "Getting Started"
+lang: en
+---
+# Getting Started
+Welcome to Digital Allies! This is a placeholder help article.
+HCE
+
+cat > content/help/getting-started.es.mdx <<'HCS'
+---
+title: "Primeros Pasos"
+lang: es
+---
+# Primeros Pasos
+¡Bienvenido a Digital Allies! Este es un artículo de ayuda de ejemplo.
+HCS
+
+# 5) Cloudflare / functions
+cat > wrangler.toml <<'WT'
+name = "digital-allies"
+compatibility_date = "2025-08-27"
+WT
+
+cat > functions/chat.ts <<'CHAT'
+export async function onRequestPost({ request }) {
+  return new Response(JSON.stringify({ message: "Chatbot backend coming soon" }), { headers: { 'content-type': 'application/json' } });
+}
+CHAT
+
+cat > functions/feedback.ts <<'FDB'
+export async function onRequestPost({ request }) {
+  return new Response(JSON.stringify({ message: "Feedback API coming soon" }), { headers: { 'content-type': 'application/json' } });
+}
+FDB
+
+cat > tools/embed.mjs <<'EMB'
+// Placeholder for embedding Help Center/Blog into Vectorize later
+console.log("Embed script stub");
+EMB
+
+# 6) Legal
+cat > legal/privacy.html <<'LP'
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Privacy Policy — Digital Allies</title></head><body><h1>Privacy Policy</h1><p>Digital Allies respects your privacy. This is a placeholder.</p></body></html>
+LP
+
+cat > legal/terms.html <<'LT'
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Terms of Service — Digital Allies</title></head><body><h1>Terms of Service</h1><p>These are placeholder terms. Replace with actual content.</p></body></html>
+LT
+
+cat > legal/accessibility.html <<'LA'
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Accessibility Statement — Digital Allies</title></head><body><h1>Accessibility Statement</h1><p>Digital Allies is committed to ADA and WCAG compliance. This is a placeholder page.</p></body></html>
+LA
+
+# 7) SEO
+cat > robots.txt <<'ROB'
+User-agent: *
+Allow: /
+Sitemap: https://digitalallies.net/sitemap.xml
+ROB
+
+cat > sitemap.xml <<'SMX'
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://digitalallies.net/</loc>
+    <lastmod>2025-08-27</lastmod>
+  </url>
+</urlset>
+SMX
+
+echo "Scaffold complete. Review and commit changes."
+

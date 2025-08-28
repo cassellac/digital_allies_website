@@ -1,0 +1,16 @@
+:root{--da-z:9999;--da-bg:#fff;--da-text:#1f2937;--da-muted:#6b7280;--da-primary:#2563EB;--da-secondary:#059669;--da-shadow:0 10px 30px rgba(0,0,0,.15);--da-radius:16px}
+.da-chat-button{position:fixed;right:20px;bottom:20px;z-index:var(--da-z);background:var(--da-primary);color:#fff;border:0;border-radius:999px;padding:12px 16px;font:600 14px "Segoe UI", Ubuntu, system-ui, -apple-system, Arial, sans-serif;box-shadow:var(--da-shadow);cursor:pointer}
+.da-chat-button:focus{outline:3px solid #93c5fd;outline-offset:2px}
+.da-chat-panel[hidden]{display:none!important}
+.da-chat-panel{position:fixed;right:20px;bottom:76px;z-index:var(--da-z);width:min(360px,90vw);max-height:min(70vh,700px);background:var(--da-bg);color:var(--da-text);border-radius:var(--da-radius);box-shadow:var(--da-shadow);display:flex;flex-direction:column;overflow:hidden}
+.da-chat-header{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid #e5e7eb;font:600 14px Ubuntu, "Segoe UI", system-ui, -apple-system, Arial, sans-serif}
+.da-chat-body{padding:12px;overflow:auto;font:14px "Segoe UI", Ubuntu, system-ui, -apple-system, Arial, sans-serif}
+.da-msg{margin:8px 0;line-height:1.5}
+.da-msg.q{font-weight:600}
+.da-msg.a{color:var(--da-text)}
+.da-search{display:flex;gap:8px;padding:12px;border-top:1px solid #e5e7eb}
+.da-search input{flex:1;min-height:44px;padding:0 12px;border-radius:10px;border:2px solid #e5e7eb;font:14px "Segoe UI", Ubuntu, system-ui, -apple-system, Arial, sans-serif}
+.da-search input:focus{border-color:var(--da-primary);outline:none;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.da-search button{min-height:44px;padding:0 14px;border-radius:10px;border:0;background:var(--da-secondary);color:#fff;font-weight:600}
+.da-search button:focus{outline:3px solid #a7f3d0;outline-offset:2px}
+.da-chat-panel[role="dialog"]{outline:none}

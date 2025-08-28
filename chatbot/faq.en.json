@@ -1,0 +1,13 @@
+{
+  "meta": { "lang": "en", "version": 1 },
+  "faqs": [
+    { "q": "What services do you offer?", "a": "Websites, ADA compliance, bilingual content, training, digital marketing, and maintenance." },
+    { "q": "Do you work in Spanish?", "a": "Yes. We provide true bilingual service (English/Spanish) across design, content, and support." },
+    { "q": "How much does a website cost?", "a": "Starter from $2,500; Business Pro from $4,500; Enterprise is custom. We also offer maintenance plans." },
+    { "q": "How do I get started?", "a": "Click ‘Start Your Project’ or use the Contact form. We’ll schedule a short call." },
+    { "q": "How can I contact you?", "a": "Email contact@digitalallies.net or call 928-228-5769. We’re in Kingman, AZ." },
+    { "q": "Do you support accessibility (ADA)?", "a": "Yes—WCAG-focused builds with keyboard navigation, color contrast, labels, skip links, and reduced motion." },
+    { "q": "Do you host websites?", "a": "We deploy on Cloudflare Pages and can manage DNS on Cloudflare. We offer ongoing support and maintenance." },
+    { "q": "Can I book a call?", "a": "Yes! Visit https://digitalallies.net/booking or email contact@digitalallies.net to schedule a consultation." }
+  ]
+}
