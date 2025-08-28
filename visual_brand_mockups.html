@@ -1,97 +1,85 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Digital Allies — Brand Guide</title>
-  <meta name="version" content="1.0 (2025-08-28)">
-  <link rel="icon" href="assets/favicon_32x32.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="https://use.typekit.net/evx4zbv.css">
+  <meta name="version" content="1.0.1 (2025-08-28)" />
+  <link rel="icon" href="/assets/favicon_32x32.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/evx4zbv.css" />
   <style>
-    :root{
-      --color-primary:#2563EB; --color-primary-light:#DBEAFE;
-      --color-secondary:#059669; --color-secondary-light:#D1FAE5;
-      --color-text:#1f2937; --color-text-light:#6b7280; --color-bg:#f9fafb;
-      --radius:16px; --shadow:0 4px 12px rgba(0,0,0,.08);
-      --font-display:"proxima-nova", Ubuntu, "Segoe UI", system-ui, sans-serif;
-      --font-body:"Segoe UI", -apple-system, system-ui, Arial, sans-serif;
-    }
-    *{box-sizing:border-box} body{margin:0;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);line-height:1.6}
-    .wrap{max-width:1200px;margin:0 auto;padding:2rem}
-    header{display:flex;align-items:center;justify-content:center;margin-bottom:2rem}
-    header img{height:44px}
-    .section{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:2rem;margin:0 0 2rem}
-    h1,h2,h3{font-family:var(--font-display);margin:0 0 1rem}
-    .grid{display:grid;gap:1rem}
-    .grid.auto{grid-template-columns:repeat(auto-fit, minmax(220px,1fr))}
-    .button{display:inline-block;border-radius:12px;padding:.6rem 1rem;text-decoration:none;font-weight:700}
-    .button.ghost{border:2px solid #9aa2ad;color:#1f2837}
-    .button.solid{background:#6b7280;color:#fff}
-    .downloads .asset{display:block;border:1px dashed #c7cdd7;border-radius:12px;padding:1rem;text-align:center}
-    .browser{background:#0f172a;border-radius:10px;overflow:hidden}
-    .bar{display:flex;align-items:center;gap:8px;height:40px;padding:0 10px;background:#e5e7eb}
-    .dot{width:12px;height:12px;border-radius:50%;background:#ff5f56}.dot:nth-child(2){background:#ffbd2e}.dot:nth-child(3){background:#27ca3f}
-    .viewport{background:#fff;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;gap:1rem}
-    .business-card{width:360px;height:200px;border-radius:12px;overflow:hidden;background:linear-gradient(135deg, var(--color-primary), var(--color-secondary));color:#fff;position:relative;padding:1rem}
-    .business-card .logo{display:flex;align-items:center;gap:.5rem;font-family:var(--font-display);font-weight:800}
-    .business-card .logo img{height:22px}
-    .business-card .info{position:absolute;left:1rem;bottom:1rem;font-size:.9rem;line-height:1.3}
-    .social{max-width:520px;border:1px solid #e1e5e9;border-radius:10px;overflow:hidden;background:#fff}
-    .social .head{display:flex;align-items:center;gap:.75rem;padding:1rem}
-    .social .head img{width:40px;height:40px;border-radius:8px}
-    .usage{background:#F0ECF3;border-radius:12px;padding:1rem}
-    .muted{color:var(--color-text-light)}
+    :root{--color-primary:#2563EB;--color-primary-light:#DBEAFE;--color-secondary:#059669;--color-secondary-light:#D1FAE5;--color-neutral:#828489;--color-neutral-dark:#414243;--color-text:#1f2937;--color-text-light:#6b7280;--color-white:#fff;--color-bg:#f9fafb}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:"Segoe UI", -apple-system, system-ui, Arial, sans-serif;line-height:1.6;color:var(--color-text);background:var(--color-bg)}
+    h1,h2,h3{font-family:"proxima-nova", Ubuntu, "Segoe UI", system-ui, sans-serif}
+    .container{max-width:1200px;margin:0 auto;padding:2rem}
+    .section{margin-bottom:3rem;padding:2rem;background:#fff;border-radius:16px;box-shadow:0 4px 6px rgba(0,0,0,.08)}
+    header{display:flex;justify-content:center;margin:2rem 0}
+    header img{height:42px}
+    .grid{display:grid;gap:1.5rem}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .button{display:inline-block;background:var(--color-primary);color:#fff;border:0;border-radius:24px;padding:.7rem 1rem;font-weight:700;text-decoration:none}
+    .button.ghost{background:transparent;color:var(--color-text);border:2px solid #cbd5e1}
+    .asset-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .asset{display:block;padding:1rem;border-radius:12px;border:1px dashed #cbd5e1;text-align:center}
+    .website-mock{background:#111827;border-radius:12px;overflow:hidden}
+    .browser-bar{background:#f3f4f6;height:40px;display:flex;align-items:center;padding:0 1rem;gap:.5rem}
+    .browser-dot{width:12px;height:12px;border-radius:50%;background:#ff5f56}
+    .browser-dot:nth-child(2){background:#ffbd2e}.browser-dot:nth-child(3){background:#27ca3f}
+    .website-content{background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:420px;padding:2rem}
+    .business-card{width:360px;height:200px;background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));border-radius:12px;padding:1.2rem;color:#fff;position:relative;overflow:hidden}
+    .business-card .card-logo{position:absolute;top:1rem;right:1rem;height:22px}
+    .business-card .contact-info{position:absolute;bottom:1.2rem;left:1.2rem}
+    .business-card .contact-info div{font-size:.9rem;margin-bottom:.25rem}
+    .social{display:flex;justify-content:center}
+    .social .avatar{width:48px;height:48px;border-radius:50%;background:#111827;display:flex;align-items:center;justify-content:center}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <a href="/"><img src="assets/logo_horizontal_primary.svg" alt="Digital Allies"></a>
-    </header>
+  <div class="container">
+    <header><a href="/"><img src="/assets/logo_horizontal_primary.svg" alt="Digital Allies" /></a></header>
 
     <section class="section">
-      <h1>Logos & Downloads</h1>
-      <p class="muted">Use primary whenever possible. Reverse for dark backgrounds. Square for avatars.</p>
-      <div class="grid auto downloads" style="margin-top:1rem">
-        <a class="asset" href="assets/logo_horizontal_primary.svg" download>Primary Horizontal (SVG)</a>
-        <a class="asset" href="assets/logo_reverse_white.svg" download>Reverse (White, SVG)</a>
-        <a class="asset" href="assets/logo_stacked_square.svg" download>Stacked Square (SVG)</a>
-        <a class="asset" href="assets/favicon_32x32.svg" download>Favicon (SVG)</a>
+      <h2>Logos & Downloads</h2>
+      <p>Use primary whenever possible. Reverse for dark backgrounds. Square for avatars.</p>
+      <div class="asset-grid" style="margin-top:1rem">
+        <a class="asset" href="/assets/logo_horizontal_primary.svg" download>Primary Horizontal (SVG)</a>
+        <a class="asset" href="/assets/logo_reverse_white.svg" download>Reverse White (SVG)</a>
+        <a class="asset" href="/assets/logo_stacked_square.svg" download>Stacked Square (SVG)</a>
+        <a class="asset" href="/assets/favicon_32x32.svg" download>Favicon (SVG)</a>
       </div>
     </section>
 
     <section class="section">
       <h2>Typography</h2>
-      <p>Headings use the Adobe kit font (<strong>Proxima Nova</strong> from your kit); body uses <strong>Segoe UI</strong> for clarity and system-friendly rendering.</p>
-      <div class="usage">
-        <ul>
-          <li>Headings: <code>"proxima-nova", Ubuntu, "Segoe UI", system-ui, sans-serif</code></li>
-          <li>Body: <code>"Segoe UI", -apple-system, system-ui, Arial, sans-serif</code></li>
-        </ul>
-      </div>
+      <p>Headings use the Adobe kit family (Proxima Nova). Body text uses Segoe UI for OS-native clarity.</p>
+      <ul>
+        <li>Headings: <strong>Proxima Nova</strong> (Adobe Fonts kit)</li>
+        <li>Body: <strong>Segoe UI</strong>, system-ui, Arial</li>
+      </ul>
     </section>
 
     <section class="section">
-      <h2>Website Preview</h2>
-      <div class="browser">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span style="margin-left:10px;font-size:.9rem;color:#475569">digitalallies.net</span></div>
-        <div class="viewport">
-          <img src="assets/logo_horizontal_primary.svg" alt="Digital Allies" style="height:32px">
-          <h3 style="font-family:var(--font-display);margin:0">Get Online, Stay Online, <em>With Ease</em></h3>
-          <p class="muted" style="text-align:center;max-width:560px">Bilingual web development and tech consulting. ADA-compliant websites for real communities.</p>
+      <h2>Website Mock</h2>
+      <div class="website-mock">
+        <div class="browser-bar"><div class="browser-dot"></div><div class="browser-dot"></div><div class="browser-dot"></div><span style="margin-left:1rem;color:#666">digitalallies.net</span></div>
+        <div class="website-content">
+          <img src="/assets/logo_horizontal_primary.svg" alt="Digital Allies" style="height:28px;margin-bottom:12px" />
+          <h3 style="font-family:var(--font-display, proxima-nova);font-size:1.6rem;margin:0 0 .5rem">Get Online, Stay Online, <em>With Ease</em></h3>
+          <p style="color:#6b7280;max-width:560px;margin:0 auto 1rem">Bilingual web development and tech consulting for small businesses, schools, and individuals. ADA‑compliant and community‑focused.</p>
+          <div><a class="button" href="/">Start Your Project</a> <a class="button ghost" href="/">Our Services</a></div>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <h2>Business Card</h2>
+      <h2>Business Card Example</h2>
       <div style="display:flex;justify-content:center;margin:1rem 0">
         <div class="business-card">
-          <div class="logo">
-            <img src="assets/logo_horizontal_primary.svg" alt="Digital Allies">
-            <span>Digital Allies</span>
-          </div>
-          <div class="info">
+          <img class="card-logo" src="/assets/logo_horizontal_primary.svg" alt="Digital Allies" />
+          <div class="contact-info">
             <div><strong>Jenny Figueroa</strong></div>
             <div>Community Relations</div>
             <div>jfig@digitalallies.net</div>
@@ -99,32 +87,22 @@
           </div>
         </div>
       </div>
-      <p class="muted" style="text-align:center">For public contact outside this mockup: <strong>contact@digitalallies.net</strong> • <strong>928-228-5769</strong> • <strong>Kingman, AZ</strong></p>
     </section>
 
     <section class="section">
-      <h2>Social Preview</h2>
-      <div style="display:flex;justify-content:center">
-        <div class="social">
-          <div class="head">
-            <img src="assets/logo_stacked_square.svg" alt="Digital Allies">
-            <div>
-              <div style="font-weight:700">Digital Allies</div>
-              <div class="muted">@digitalallies</div>
-            </div>
-          </div>
-          <div style="padding:1rem">
-            <div style="height:200px;border-radius:10px;background:linear-gradient(135deg,#DBEAFE,#D1FAE5);display:flex;align-items:center;justify-content:center;margin-bottom:1rem">
-              <img src="assets/logo_horizontal_primary.svg" alt="Digital Allies" style="height:28px">
-            </div>
-            <p>🎯 Accessibility first. Bilingual always. We help you get online — and stay online — with ease.</p>
-          </div>
+      <h2>Social Media Example</h2>
+      <div class="social">
+        <div class="avatar"><img src="/assets/logo_stacked_square.svg" alt="Digital Allies" style="height:32px" /></div>
+        <div style="margin-left:12px">
+          <div style="font-weight:700">Digital Allies</div>
+          <div style="color:#8a8a8a;font-size:.9rem">@digitalallies</div>
         </div>
       </div>
     </section>
 
-    <footer class="muted" style="text-align:center;margin:2rem 0 0">
-      &copy; 2025 Digital Allies • contact@digitalallies.net • 928-228-5769 • Kingman, AZ
+    <footer style="text-align:center;color:#6b7280;padding:2rem 0">
+      <div>Email: <a href="mailto:contact@digitalallies.net">contact@digitalallies.net</a> · Phone: <a href="tel:+19282285769">928-228-5769</a> · Kingman, AZ</div>
+      <div style="margin-top:.5rem"><small>Version 1.0.1 — 2025-08-28</small></div>
     </footer>
   </div>
 </body>
